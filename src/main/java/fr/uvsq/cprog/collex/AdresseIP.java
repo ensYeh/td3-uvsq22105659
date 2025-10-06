@@ -32,5 +32,10 @@ public class AdresseIP {
         return this.ip.equals(adresseIP.ip);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(ip);
+    }
+
 
 }
