@@ -19,5 +19,10 @@ public class AdresseIP {
         return ip;
     }
 
+    @Override
+    public String toString() {
+        return ip;
+    }
+
 
 }
