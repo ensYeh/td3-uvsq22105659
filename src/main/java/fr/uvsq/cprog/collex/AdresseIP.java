@@ -24,5 +24,13 @@ public class AdresseIP {
         return ip;
     }
 
+     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AdresseIP adresseIP = (AdresseIP) o;
+        return this.ip.equals(adresseIP.ip);
+    }
+
 
 }
