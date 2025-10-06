@@ -15,4 +15,9 @@ public class AdresseIP {
         this.ip = ip;
     }
 
+    public String getIp() {
+        return ip;
+    }
+
+
 }
