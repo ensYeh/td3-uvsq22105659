@@ -1,5 +1,7 @@
 package fr.uvsq.cprog.collex;
 
+import java.util.Objects;
+
 public class NomMachine {
     private final String nom;
     private final String domaine;
@@ -26,5 +28,13 @@ public class NomMachine {
     @Override
     public String toString() {
         return nom + "." + domaine;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NomMachine nomMachine = (NomMachine) o;
+        return this.nom.equals(nomMachine.nom) && this.domaine.equals(nomMachine.domaine);
     }
 }
