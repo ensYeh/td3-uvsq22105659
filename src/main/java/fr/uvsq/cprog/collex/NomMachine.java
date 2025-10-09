@@ -19,5 +19,7 @@ public class NomMachine {
         return nom;
     }
 
-    
+    public String getDomaine() {
+        return domaine;
+    }
 }
