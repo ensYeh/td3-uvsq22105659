@@ -14,4 +14,8 @@ public class DnsItem {
         this.ip = ip;
         this.nomMachine = nomMachine;
     }
+
+    public AdresseIP getIp()  {
+        return ip;
+    }
 }
