@@ -30,7 +30,7 @@ public class Dns {
         }
     }
 
-    public DnsItem geItem(AdresseIP ip) {
+    public DnsItem getItem(AdresseIP ip) {
         for (DnsItem item : items) {
             if (item.getIp().equals(ip)) {
                 return item;
@@ -56,6 +56,22 @@ public class Dns {
             }
         }
         return resultat;
+    }
+
+    public void addItem(AdresseIP ip, NomMachine nomMachine) throws IllegalArgumentException, IOException {
+        if (ip == null || nomMachine == null) {
+            throw new NullPointerException("Adresse IP ou Nom de machine ne peut pas être nul");
+        }
+        if (getItem(ip) != null) {
+            throw new IllegalArgumentException("Adresse IP déjà existante !");
+        }
+        if (getItem(nomMachine) != null) {
+            throw new IllegalArgumentException("Nom de machine déjà existant !");
+        }
+        DnsItem newItem = new DnsItem(ip, nomMachine);
+        items.add(newItem);
+        List<String> lignes = items.stream().map(DnsItem::toString).collect(Collectors.toList());
+        Files.write(fichier, lignes);
     }
 
 
