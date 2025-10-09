@@ -48,5 +48,15 @@ public class Dns {
         return null;
     }
 
+    public List<DnsItem> getItems(String domaine) {
+        List<DnsItem> resultat = new ArrayList<>();
+        for (DnsItem item : items) {
+            if (item.getNomMachine().getDomaine().equals(domaine)) {
+                resultat.add(item);
+            }
+        }
+        return resultat;
+    }
+
 
 }
