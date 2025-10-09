@@ -37,4 +37,9 @@ public class NomMachine {
         NomMachine nomMachine = (NomMachine) o;
         return this.nom.equals(nomMachine.nom) && this.domaine.equals(nomMachine.domaine);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, domaine);
+    }
 }
