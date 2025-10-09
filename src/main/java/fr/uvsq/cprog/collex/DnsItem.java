@@ -27,7 +27,7 @@ public class DnsItem {
 
     @Override
     public String toString() {
-        return ip + " " + nomMachine;
+        return nomMachine + " " + ip;
     }
 
     @Override
