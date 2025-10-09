@@ -74,5 +74,4 @@ public class Dns {
         Files.write(fichier, lignes);
     }
 
-
 }
