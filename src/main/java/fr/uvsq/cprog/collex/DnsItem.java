@@ -27,4 +27,12 @@ public class DnsItem {
     public String toString() {
         return ip + " " + nomMachine;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DnsItem dnsItem = (DnsItem) o;
+        return this.ip.equals(dnsItem.ip) && this.nomMachine.equals(dnsItem.nomMachine);
+    }
 }
