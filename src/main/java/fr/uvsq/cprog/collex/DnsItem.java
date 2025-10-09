@@ -18,4 +18,8 @@ public class DnsItem {
     public AdresseIP getIp()  {
         return ip;
     }
+
+    public NomMachine getNomMachine() {
+        return nomMachine;
+    }
 }
