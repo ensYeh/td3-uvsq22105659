@@ -14,4 +14,10 @@ public class NomMachine {
         this.nom = nom;
         this.domaine = domaine;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    
 }
