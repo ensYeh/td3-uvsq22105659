@@ -12,4 +12,16 @@ public class DnsTUI {
         String ligne = sc.nextLine().trim();
         return null;
     }
+
+    public void affiche (Object resultat) {
+        if (resultat == null) {
+            System.out.println("Aucun résultat");
+        } else if (resultat instanceof List<?> liste) {
+            for (Object item : liste) {
+                System.out.println(item);
+            }
+        } else {
+            System.out.println(resultat);
+        }
+    }
 }
