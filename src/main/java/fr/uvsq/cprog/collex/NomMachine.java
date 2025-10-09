@@ -22,4 +22,9 @@ public class NomMachine {
     public String getDomaine() {
         return domaine;
     }
+
+    @Override
+    public String toString() {
+        return nom + "." + domaine;
+    }
 }
