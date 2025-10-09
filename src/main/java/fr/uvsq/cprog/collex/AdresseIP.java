@@ -36,6 +36,4 @@ public class AdresseIP {
     public int hashCode() {
         return Objects.hash(ip);
     }
-
-
 }

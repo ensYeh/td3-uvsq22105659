@@ -1,5 +1,17 @@
 package fr.uvsq.cprog.collex;
 
 public class NomMachine {
-    
+    private final String nom;
+    private final String domaine;
+
+    public NomMachine(String nom, String domaine) {
+        if (nom == null || nom.isEmpty()) {
+            throw new NullPointerException("Nom de machine ne peut pas être nul ou vide");
+        }
+        if (domaine == null || domaine.isEmpty()) {
+            throw new NullPointerException("Domaine ne peut pas être nul ou vide");
+        }
+        this.nom = nom;
+        this.domaine = domaine;
+    }
 }
