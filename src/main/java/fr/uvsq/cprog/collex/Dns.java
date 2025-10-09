@@ -29,4 +29,15 @@ public class Dns {
             }
         }
     }
+
+    public DnsItem geItem(AdresseIP ip) {
+        for (DnsItem item : items) {
+            if (item.getIp().equals(ip)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+
 }
