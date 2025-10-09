@@ -39,5 +39,14 @@ public class Dns {
         return null;
     }
 
+    public DnsItem getItem(NomMachine nomMachine) {
+        for (DnsItem item : items) {
+            if (item.getNomMachine().equals(nomMachine)){
+                return item;
+            }
+        }
+        return null;
+    }
+
 
 }
