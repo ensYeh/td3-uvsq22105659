@@ -1,5 +1,7 @@
 package fr.uvsq.cprog.collex;
 
+import java.util.Objects;
+
 public class DnsItem {
     private final AdresseIP  ip;
     private final NomMachine nomMachine;
@@ -34,5 +36,10 @@ public class DnsItem {
         if (o == null || getClass() != o.getClass()) return false;
         DnsItem dnsItem = (DnsItem) o;
         return this.ip.equals(dnsItem.ip) && this.nomMachine.equals(dnsItem.nomMachine);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ip, nomMachine);
     }
 }
