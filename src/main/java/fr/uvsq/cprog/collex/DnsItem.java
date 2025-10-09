@@ -22,4 +22,9 @@ public class DnsItem {
     public NomMachine getNomMachine() {
         return nomMachine;
     }
+
+    @Override
+    public String toString() {
+        return ip + " " + nomMachine;
+    }
 }
