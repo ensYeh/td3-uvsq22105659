@@ -11,7 +11,7 @@ public class ResolveIpCommande implements Commande{
     public Object execute(Dns dns) {
         DnsItem item = dns.getItem(nomMachine);
         if (item != null) {
-            return item.getIp()
+            return item.getIp();
         } else {
             return "Aucun résultat pour cette machine";
         }

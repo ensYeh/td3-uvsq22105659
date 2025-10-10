@@ -9,6 +9,7 @@ public class AdresseIP {
         if (ip == null) {
             throw new IllegalArgumentException("Adresse IP ne peut pas être nulle");
         }
+        ip = ip.trim();
         if (!ip.matches("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")) {
             throw new IllegalArgumentException("Adresse IP invalide : " + ip);
         } 
