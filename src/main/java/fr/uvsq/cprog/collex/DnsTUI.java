@@ -26,7 +26,7 @@ public class DnsTUI {
             if (parties[0].equalsIgnoreCase("ls")) {
                 boolean triParAdresse = (parties.length == 3 && parties[1].equals("-a"));
                 String domaine = triParAdresse ? parties[2] : parties[1];
-                return new ResolveDomainCommande(domaine);
+                return new ResolveDomainCommande(domaine, triParAdresse);
             }
 
             if (parties[0].equalsIgnoreCase("quit")) {
