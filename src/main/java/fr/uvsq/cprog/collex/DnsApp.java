@@ -22,4 +22,14 @@ public class DnsApp {
             tui.affiche(resultat);
         }
     }
+
+    public static void main(String[] args) {
+        try {
+            Path fichier = Path.of("dns.txt");
+            DnsApp app = new DnsApp(fichier);
+            app.run();
+        } catch (IOException e) {
+            System.err.println("Erreur lors de l'initialisation du DNS : " + e.getMessage());
+        }
+    }
 }
