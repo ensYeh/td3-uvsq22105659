@@ -7,11 +7,17 @@ public class NomMachine {
     private final String domaine;
 
     public NomMachine(String nom, String domaine) {
-        if (nom == null || nom.isEmpty()) {
-            throw new NullPointerException("Nom de machine ne peut pas être nul ou vide");
+        if (nom == null) {
+            throw new IllegalArgumentException("Nom de machine ne peut pas être nul");
         }
-        if (domaine == null || domaine.isEmpty()) {
-            throw new NullPointerException("Domaine ne peut pas être nul ou vide");
+        if (nom.isEmpty()) {
+            throw new IllegalArgumentException("Nom de machine ne peut pas être vide");
+        }
+        if (domaine == null) {
+            throw new IllegalArgumentException("Domaine ne peut pas être nul");
+        }
+        if (domaine.isEmpty()) {
+            throw new IllegalArgumentException("Domaine ne peut pas être vide");
         }
         this.nom = nom;
         this.domaine = domaine;

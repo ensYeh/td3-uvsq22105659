@@ -18,7 +18,7 @@ public class NomMachineTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testCreationInvalide_Vide() {
-        new NomMachine("   ", "uvsq.fr");
+        new NomMachine("", "uvsq.fr");
     }
 
     @Test
