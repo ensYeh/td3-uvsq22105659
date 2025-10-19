@@ -2,3 +2,4 @@ www.uvsq.fr 193.51.31.90
 poste.uvsq.fr 193.51.31.154
 pikachu.uvsq.fr 193.51.25.24
 ecampus.uvsq.fr 193.51.25.12
+test.versailles.fr 193.51.87.03

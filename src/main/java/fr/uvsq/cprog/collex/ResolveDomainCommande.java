@@ -24,7 +24,17 @@ public class ResolveDomainCommande implements Commande {
         }
 
         if (triParAdresse) {
-            items.sort(Comparator.comparing(item -> item.getIp().toString()));
+            items.sort((a,b) -> {
+                String[] pa = a.getIp().toString().split("\\.");
+                String[] pb = b.getIp().toString().split("\\.");
+                for (int i = 0; i < 4; i++) {
+                    int ia = Integer.parseInt(pa[i]);
+                    int ib = Integer.parseInt(pb[i]);
+                    if (ia != ib) return Integer.compare(ia, ib);
+                }
+                return 0;
+
+            });
         } else {
             items.sort(Comparator.comparing(item -> item.getNomMachine().toString()));
         }
