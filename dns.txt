@@ -1,4 +1,4 @@
 www.uvsq.fr 193.51.31.90
 poste.uvsq.fr 193.51.31.154
-ecampus.uvsq.fr 193.51.25.12
 pikachu.uvsq.fr 193.51.25.24
+ecampus.uvsq.fr 193.51.25.12

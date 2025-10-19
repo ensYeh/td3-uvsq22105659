@@ -20,11 +20,17 @@ public class Dns {
         if (Files.exists(fichier)) {
             List<String> lignes = Files.readAllLines(fichier);
             for (String ligne : lignes) {
-                String[] parties = ligne.trim().split("\\s+");
+                ligne = ligne.trim();
+                if (ligne.isEmpty()) continue;
+
+                String[] parties = ligne.split("\\s+");
                 if (parties.length != 2) continue;
-                AdresseIP ip = new AdresseIP(parties[1]);
-                String[] nomParties = parties[0].split("\\.", 2);
-                NomMachine nomMachine = new NomMachine(nomParties[0],nomParties[1]);
+
+                AdresseIP ip = new AdresseIP(parties[1].trim());
+
+                String[] nomParties = parties[0].trim().split("\\.", 2);
+                NomMachine nomMachine = new NomMachine(nomParties[0].trim(),nomParties[1].trim());
+                
                 items.add(new DnsItem(ip, nomMachine));
             }
         }

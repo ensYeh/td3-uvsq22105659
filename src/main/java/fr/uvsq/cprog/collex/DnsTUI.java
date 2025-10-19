@@ -33,7 +33,7 @@ public class DnsTUI {
                 return new QuitCommande();
             }
 
-            if (parties[0].matches("((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")) {
+            if (parties[0].matches("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$")) {
                 AdresseIP ip = new AdresseIP(parties[0]);
                 return new ResolveNameCommande(ip);
             }
