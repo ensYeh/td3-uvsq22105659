@@ -3,8 +3,8 @@ package fr.uvsq.cprog.collex;
 import java.io.IOException;
 
 public class AddCommande implements Commande{
-    private final AdresseIP ip;
-    private final NomMachine  nomMachine;
+    final AdresseIP ip;
+    final NomMachine  nomMachine;
 
     public AddCommande(AdresseIP ip, NomMachine nomMachine) {
         this.ip = ip;
