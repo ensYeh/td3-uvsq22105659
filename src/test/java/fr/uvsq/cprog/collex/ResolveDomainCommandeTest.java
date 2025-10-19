@@ -7,8 +7,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Tests unitaires de la classe {@link ResolveDomainCommande}.
+ */
 public class ResolveDomainCommandeTest {
 
+    /**
+     * Teste l'exécution d'une commande avec des résultats présents.
+     */
     @Test
     public void testExecuteAvecResultat() throws IOException {
         Path tempFile = Files.createTempFile("dnsTemp", ".txt");
@@ -31,6 +37,9 @@ public class ResolveDomainCommandeTest {
         assertEquals(2, items.size());
     }
 
+    /**
+     * Teste l'exécution d'une commande pour un domaine sans résultat.
+     */
     @Test
     public void testExecuteSansResultat() throws IOException {
         Path tempFile = Files.createTempFile("dnsTemp", ".txt");
@@ -50,6 +59,9 @@ public class ResolveDomainCommandeTest {
         }
     }
 
+    /**
+     * Teste l'exécution avec tri des résultats par adresse IP.
+     */
     @Test
     public void testTriParAdresse() throws IOException {
         Path tempFile = Files.createTempFile("dnsTemp", ".txt");

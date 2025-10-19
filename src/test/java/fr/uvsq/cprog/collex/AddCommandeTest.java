@@ -6,8 +6,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Test unitaire de la classe {@link AddCommande}.
+ */
 public class AddCommandeTest {
 
+    /**
+     * Vérifie que le constructeur initialise correctement les attributs.
+     */
     @Test
     public void testConstructeurEtGetters() {
         AdresseIP ip = new AdresseIP("192.168.0.1");
@@ -18,6 +24,11 @@ public class AddCommandeTest {
         assertEquals(nom, add.nomMachine);
     }
 
+    /**
+     * Vérifie que l'ajout via execute() fonctionne correctement.
+     *
+     * @throws IOException si une erreur de fichier survient
+     */
     @Test
     public void testExecuteAjoutReussi() throws IOException {
         Path tempFile = Files.createTempFile("dns", ".txt");
@@ -35,6 +46,11 @@ public class AddCommandeTest {
         assertNotNull(dns.getItem(nom));
     }
 
+    /**
+     * Vérifie que l'ajout d'un doublon retourne une erreur.
+     *
+     * @throws IOException si une erreur de fichier survient
+     */
     @Test
     public void testExecuteAjoutDoublon() throws IOException {
         Path tempFile = Files.createTempFile("dns", ".txt");

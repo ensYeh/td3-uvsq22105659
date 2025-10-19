@@ -6,8 +6,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Tests unitaires de la classe {@link ResolveNameCommande}.
+ */
 public class ResolveNameCommandeTest {
 
+    /**
+     * Teste la résolution réussie d'une adresse IP vers son nom de machine.
+     */
     @Test
     public void testExecuteResolutionReussie() throws IOException {
         Path tempFile = Files.createTempFile("dnsTemp", ".txt");
@@ -25,6 +31,9 @@ public class ResolveNameCommandeTest {
         assertEquals("www.uvsq.fr", result.toString());
     }
 
+    /**
+     * Teste la résolution échouée lorsqu'aucune adresse IP correspondante n'existe.
+     */
     @Test
     public void testExecuteResolutionEchouee() throws IOException {
         Path tempFile = Files.createTempFile("dnsTemp", ".txt");

@@ -2,22 +2,24 @@ package fr.uvsq.cprog.collex;
 
 import java.util.Objects;
 
+/** Représente le nom complet d'une machine, incluant son nom et son domaine. */
 public class NomMachine {
+
     private final String nom;
     private final String domaine;
 
+    /**
+     * Crée un nouveau NomMachine.
+     *
+     * @param nom     le nom de la machine, non nul et non vide
+     * @param domaine le domaine de la machine, non nul et non vide
+     */
     public NomMachine(String nom, String domaine) {
-        if (nom == null) {
-            throw new IllegalArgumentException("Nom de machine ne peut pas être nul");
+        if (nom == null || nom.isEmpty()) {
+            throw new IllegalArgumentException("Nom de machine ne peut pas être nul ou vide");
         }
-        if (nom.isEmpty()) {
-            throw new IllegalArgumentException("Nom de machine ne peut pas être vide");
-        }
-        if (domaine == null) {
-            throw new IllegalArgumentException("Domaine ne peut pas être nul");
-        }
-        if (domaine.isEmpty()) {
-            throw new IllegalArgumentException("Domaine ne peut pas être vide");
+        if (domaine == null || domaine.isEmpty()) {
+            throw new IllegalArgumentException("Domaine ne peut pas être nul ou vide");
         }
         this.nom = nom;
         this.domaine = domaine;
@@ -38,10 +40,12 @@ public class NomMachine {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NomMachine nomMachine = (NomMachine) o;
-        return this.nom.equals(nomMachine.nom) && this.domaine.equals(nomMachine.domaine);
+        if (this == o)
+            return true;
+        if (!(o instanceof NomMachine))
+            return false;
+        NomMachine that = (NomMachine) o;
+        return nom.equals(that.nom) && domaine.equals(that.domaine);
     }
 
     @Override
