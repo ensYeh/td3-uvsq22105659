@@ -1,10 +1,13 @@
 package fr.uvsq.cprog.collex;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 
 /**
  * Test unitaire de la classe {@link AddCommande}.
